@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+    <title>Notes</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <button class="add" id="add">
-        <i class="fas fa-plus"></i>Add Note
-    </button>
-    <div class="note">
-        <div class="tools">
-            <button class="edit"><i class="fas fa-edit"></i></button>
-            <button class="delete"><i class="fas fa-trash-alt"></i></button>
+    <div class="notes" id="app">
+        <div class="notes__sidebar">
+            <button class="notes__add">Add Note</button>
+            <div class="notes__list">
+                <div class="notes__list-item notes__list-item--selected">
+                    <div class="notes__small-title">Lecture Notes</div>
+                    <div class="notes__small-body">I Learnt Nothing</div>
+                    <div class="notes__small-updated">Thursday 3:30pm</div>
+                </div>
+            </div>
         </div>
-        <div class="main"></div>
-        <textarea></textarea>
+        <div class="notes__preview">
+            <input class="notes__title" type="text" placeholder="Enter a title...">
+            <textarea name="" class="notes__body" placeholder="Enter the text"></textarea>
+        </div>
     </div>
 </body>
 </html>
