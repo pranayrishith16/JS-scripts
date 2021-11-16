@@ -14,11 +14,11 @@ export default class NotesAPI{
         if(exist){
             exist.title = noteToSave.title;
             exist.body = noteToSave.body;
-            exist.updatedOn = new Date().toISOString();
+            exist.updated = new Date().toISOString();
         }
         else{
             noteToSave.id = Math.floor(Math.random() * 1000000);
-            noteToSave.updatedOn = new Date().toISOString();
+            noteToSave.updated = new Date().toISOString();
             notes.push(noteToSave);
         }
 
