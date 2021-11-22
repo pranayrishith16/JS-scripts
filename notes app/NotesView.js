@@ -62,12 +62,20 @@ export default class NotesView{
             const html = this._createListItemHTML(note.id, note.title, note.body, note.updated);
 
             notesListContainer.insertAdjacentHTML("beforeend",html);
-        }
+        }   
 
         // add select/delete events for each list item
         notesListContainer.querySelectorAll(".notes__list-item".forEach(noteListItem => {
             noteListItem.addEventListener("click", () => {
                 this.onNoteSelect(noteListItem.dataset.noteId);
+            });
+
+            noteListItem.addEventListener("dblclick", () => {
+                const doDelete = confirm("Are you sure you want to delete this note?");
+
+                if(doDelete){
+                    this.onNoteDelete(noteListItem.dataset.noteId);
+                }
             })
         }));
     }
